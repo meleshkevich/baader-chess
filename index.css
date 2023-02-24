@@ -5,6 +5,7 @@
 
 #parent {
   display: flex;
+  flex-direction: column;
   width: 512px;
   height: 512px;
 }
@@ -27,20 +28,21 @@
   align-items: center;
 }
 
-.piece-white {
-  width: 15px;
-  height: 15px;
-  border: 2px solid black;
-
-  background-color: black;
-  cursor: pointer;
-}
-
 .piece-black {
   width: 15px;
   height: 15px;
   border: 2px solid white;
+  background-color: black;
+  cursor: pointer;
+}
 
+.piece-white {
+  width: 15px;
+  height: 15px;
+  border: 2px solid black;
   background-color: white;
   cursor: pointer;
+}
+.red-border {
+  border: 2px solid red;
 }
