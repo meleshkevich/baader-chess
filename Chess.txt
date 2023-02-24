@@ -1,0 +1,17 @@
+The game of chess
+
+Imagine a chess board. It has 8x8 = 64 squares inside, with the colors white and black. No two adjoining squares can have the same color. This way, there are 32 white and 32 black squares. You need to have 32 identical looking pieces, 16 each for white and black. Each piece travels similarly, one step forward, either straight or diagonally. White moves first and then black and white move alternatively. You are asked to build a chess board keeping in mind the following instructions:
+
+1. You should not use any tables. So, it has to be a nested-DIV based markup. You should write a JavaScript program which appends a new chess-board (a new div with ID as chessBoard containing the game of chess) inside the DIV with ID as parent when called. Call this function as the page loads. Add a button, clicking on which, the user can reset the game, which means you might need to remove the existing chessboard from the view and call the same function again.
+
+2. The 64 squares should all be divs, with alternating background colors, horizontally and vertically. The square with white background color should have a CSS class white, similarly, the square with black background color should have a CSS class black.
+
+3. Each piece is also a div with square dimensions, with a border of contrasting color (a white piece should have black border and vice versa) and 2px width. Please have two CSS classes, piece-black and piece-white for this.
+
+4. For moving a piece, the user should click on it (apply one more CSS class, red-border, to make the border of the piece div displayed in red, so as to indicate that it is selected), and again click on the target square (where user wants the piece to move). If the user wants to move the piece into a square which is more than one step away from its current square, or which is not in the forward direction, display a warning, " Move not allowed" in the div with ID message. When the target square div is clicked, make sure you remove the class red-border from the piece DIV.
+For instance, if the current square for the piece to be moved is (row=2, column=5), it can be moved to squares (row=3, column=4), (row=3, column=5) and (row=3, column=6), if its color's (white) originating rows were 1 and 2, but if the piece was from the opposite side (black), i.e. the originating rows be 7 and 8 and lets say the piece' current position be (row=6, column=5), it can be moved to squares (row=5, column=4), (row=5, column=5) and (row=5, column=6).  
+For this, all the square-divs should have a custom attribute, position, value of which should just be a string like " x_y" where x is the row number and y is the column number.
+
+5. Do not allow any move if the target square already has a piece of the same color. If there is a piece of the opposite color in the target square, it should be removed, and in the message div, say, " Good move there!" as the piece is moved to the target square.
+ 
+Note: Do not use HEX, RGB or any other code for coloring. Use the color name as specified.
