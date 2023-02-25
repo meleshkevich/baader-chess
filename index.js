@@ -26,7 +26,6 @@ const showError = (message) => {
   }, 2000);
 };
 const movePiece = (chessSquare) => {
-  console.log("append piece here", chessSquare);
   const piece = document.createElement("div");
   if (chessSquare.classList.contains("white")) {
     piece.setAttribute("class", `piece-white`);
@@ -41,14 +40,16 @@ const movePiece = (chessSquare) => {
 const validateMove = (chessSquare) => {
   let clickedSquare = chessSquare.getAttribute("row");
   let pieceOrigine = sessionStorage.getItem("pieceOrigine");
-
+  chessSquare.childElementCount;
   if (pieceOrigine == 1 || pieceOrigine == 2) {
-    clickedSquare < sessionStorage.getItem("pieceRow")
+    clickedSquare < sessionStorage.getItem("pieceRow") ||
+    chessSquare.childElementCount
       ? showError("Move not allowed!")
       : movePiece(chessSquare);
   } else if (pieceOrigine == 7 || pieceOrigine == 8) {
     clickedSquare > sessionStorage.getItem("pieceRow") ||
-    clickedSquare < sessionStorage.getItem("pieceRow") - 1
+    clickedSquare < sessionStorage.getItem("pieceRow") - 1 ||
+    chessSquare.childElementCount
       ? showError("Move not allowed!")
       : movePiece(chessSquare);
   }
@@ -107,7 +108,7 @@ const newBoard = () => {
       }
       chessSquare.addEventListener("click", () => {
         chessSquare.classList.add("red-border");
-        console.log(chessSquare, "chessSquare");
+
         //set square values to sessionStorage
         sessionStorage.setItem("squareRow", chessSquare.getAttribute("row"));
         sessionStorage.setItem(
